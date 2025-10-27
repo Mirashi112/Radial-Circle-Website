@@ -115,7 +115,7 @@ const valvesActuators = [
                </div>
              </header>
 
-   {/* Company Overview */}
+ {/* Company Overview */}
 <section className="py-16 px-6 lg:px-20">
   {/* Title */}
   <h2
@@ -131,13 +131,14 @@ const valvesActuators = [
     style={{ borderColor: theme.accent }}
   >
     <p className="text-gray-700 text-justify leading-relaxed">
-      Radial Oil Support Services Limited (ROSS) provides a full range of
-      safety systems solutions in areas where hazardous substances such as
-      combustible liquids and gases are handled. We are dedicated to
-      satisfying customer needs, delivering services that improve plant
-      efficiency and optimize business processes through innovative
-      technologies. Our mission is to apply cutting-edge solutions in
-      solving technical challenges across diverse industries.
+      Radial Oil Support Services Limited (ROSS) Provides full range of safety systems solutions,
+      in all areas where hazardous substances such as combustible liquids & gases are worked and
+      satisfying our customer's needs is our priority, we are dedicated in providing a world class
+      industrials products and technical services to our numerous clients in Nigeria and Africa.
+      <br /><br />
+      We are dedicated to service delivery aimed at improving plant efficiency and optimizing
+      business processes through technology. We have taken interest in applying innovative
+      technologies in solving technical challenges faced by our clients in their various industries.
     </p>
   </div>
 </section>
@@ -375,50 +376,6 @@ const valvesActuators = [
               />
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section
-        className="py-16 px-6 lg:px-20"
-        style={{ backgroundColor: theme.bg }}
-      >
-        <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="text-2xl font-bold mb-10 text-center"
-          style={{ color: theme.accent }}
-        >
-          Few Project Experiences
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            {
-              title: "Offshore IFG Installation",
-              desc: "Installed and commissioned integrated fire & gas panels for offshore platforms, ensuring global compliance.",
-            },
-            {
-              title: "Onshore Calibration Program",
-              desc: "Delivered routine calibration and preventive maintenance for multiple facilities.",
-            },
-          ].map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition border-l-4"
-              style={{ borderColor: theme.accent }}
-            >
-              <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {project.desc}
-              </p>
-            </motion.div>
-          ))}
         </div>
       </section>
 

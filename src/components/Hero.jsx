@@ -322,7 +322,7 @@ const Hero = () => {
           Telecommunications, Marine Electronics, Navigational Aids,
           Security Systems, and Industrial Automation.
         </span>{" "}
-        For 30 years, we have remained committed to driving innovation,
+        For years, we have remained committed to driving innovation,
         excellence, and sustainable growth across Africa’s industrial and
         infrastructure sectors.
       </p>
