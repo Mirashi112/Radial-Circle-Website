@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight, FaPause, FaPlay } from "react-icons/fa6";
+import { FaHandshake, FaSmileBeam } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 import Partners from "./Partners"; 
 import { 
@@ -11,7 +13,7 @@ import {
 } from "react-icons/fa";
 
 
-
+import arrow from '../assets/arrow.png';
 import iso45001 from "../assets/iso45001-2018.jpeg";
 import iso9001 from "../assets/iso9001-2015.jpg";
 
@@ -63,8 +65,8 @@ const slides = [
   },
 
   {
-    title: "Radial Circle Engineering Ltd",
-    desc: "ANGOLA/MOZAMBIQUE/SENEGAL/UGANDA.",
+    title: "Radial Circle Engineering Services Ltd",
+    desc: "GHANA/MOZAMBIQUE/SENEGAL/UGANDA.",
     bg: bgRcel,
     logo: rcelLogo,
      strokeColor: "#0e8ccaff",
@@ -205,101 +207,116 @@ const Hero = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen bg-gray-900 text-white overflow-hidden">
-        <AnimatePresence custom={direction} mode="wait">
-          <motion.div
-            key={activeSlide}
-            className="absolute inset-0 flex items-center justify-center bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[activeSlide].bg})` }}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-          >
-            <motion.div
-              className="relative z-10 flex flex-col items-center justify-center text-white text-center px-2 sm:px-6 md:px-12 lg:px-20"
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-            >
-              <div className="bg-gradient-to-t from-black/60 via-black/40 to-transparent backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-10 shadow-xl">
-                <AnimatedLogoWrapper
-                  src={slides[activeSlide].logo}
-                  alt={`${slides[activeSlide].title} logo`}
-                  strokeColor={slides[activeSlide].strokeColor}
-                  activeSlide={activeSlide}
-                  isPlaying={isPlaying}
-                />
-                <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl font-bold drop-shadow-lg leading-snug sm:leading-tight">
-                  {slides[activeSlide].title}
-                </h3>
-                <p className="mt-2 sm:mt-4 text-xs sm:text-sm md:text-base lg:text-lg max-w-xs sm:max-w-md md:max-w-xl mx-auto drop-shadow-md">
-                  {slides[activeSlide].desc}
-                </p>
-                <Link
-                  to={slides[activeSlide].link}
-                  className="mt-4 sm:mt-6 inline-block font-semibold px-3 py-1 sm:px-5 sm:py-2 md:px-6 md:py-3 rounded-lg shadow-lg text-xs sm:text-sm md:text-base"
-                  style={{ backgroundColor: buttonBg, color: buttonText }}
-                >
-                  {slides[activeSlide].buttonText}
-                </Link>
-              </div>
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
+  {/* Hero Section */}
+<section className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen text-white overflow-hidden">
 
-        {/* Hero Arrows */}
-        <button
-          onClick={() => paginate(-1)}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-800 p-1 sm:p-2 z-20 transition"
-        >
-          <FaChevronLeft size={18} />
-        </button>
-        <button
-          onClick={() => paginate(1)}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-800 p-1 sm:p-2 z-20 transition"
-        >
-          <FaChevronRight size={18} />
-        </button>
+  <AnimatePresence custom={direction} mode="wait">
+    <motion.div
+      key={activeSlide}
+      className="absolute inset-0 flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url(${slides[activeSlide].bg})` }}
+      custom={direction}
+      variants={slideVariants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+    >
+      {/* Lighter Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-        {/* Hero Dots + Pause/Play */}
-        <div className="absolute bottom-4 sm:bottom-6 w-full flex justify-center items-center gap-3 z-20">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() =>
-                setActiveSlide([index, index > activeSlide ? 1 : -1])
-              }
-              className={`w-3 h-3 sm:w-3 sm:h-3 rounded-full ${
-                activeSlide === index
-                  ? "bg-white/90"
-                  : "bg-white/40 hover:bg-white/60"
-              }`}
-            />
-          ))}
-          <button
-            onClick={() => setIsPlaying(!isPlaying)}
-            className="ml-4 bg-white/70 hover:bg-white rounded-full p-2 transition"
+      <motion.div
+        className="relative z-10 flex flex-col items-center justify-center text-center px-2 sm:px-6 md:px-12 lg:px-20"
+        custom={direction}
+        variants={slideVariants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+      >
+        {/* Slightly dark slide box */}
+        <div className="rounded-2xl p-4 sm:p-6 md:p-10 shadow-xl bg-black/35">
+
+          {/* Bigger Logo on Mobile */}
+          <AnimatedLogoWrapper
+            className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto"
+            src={slides[activeSlide].logo}
+            alt={`${slides[activeSlide].title} logo`}
+            strokeColor={slides[activeSlide].strokeColor}
+            activeSlide={activeSlide}
+            isPlaying={isPlaying}
+          />
+
+          <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl font-bold drop-shadow-lg leading-snug sm:leading-tight">
+            {slides[activeSlide].title}
+          </h3>
+
+          <p className="mt-2 sm:mt-4 text-xs sm:text-sm md:text-base lg:text-lg max-w-xs sm:max-w-md md:max-w-xl mx-auto drop-shadow-md">
+            {slides[activeSlide].desc}
+          </p>
+
+          <Link
+            to={slides[activeSlide].link}
+            className="mt-4 sm:mt-6 inline-block font-semibold px-3 py-1 sm:px-5 sm:py-2 md:px-6 md:py-3 rounded-lg shadow-lg text-xs sm:text-sm md:text-base"
+            style={{ backgroundColor: buttonBg, color: buttonText }}
           >
-            {isPlaying ? (
-              <FaPause size={14} color="black" />
-            ) : (
-              <FaPlay size={14} color="black" />
-            )}
-          </button>
+            {slides[activeSlide].buttonText}
+          </Link>
+
         </div>
-      </section>
+      </motion.div>
+    </motion.div>
+  </AnimatePresence>
+
+  {/* Hero Arrows (no background)
+  <button
+    onClick={() => paginate(-1)}
+    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 transition p-0"
+  >
+    <img src={arrow} alt="Left arrow" className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+  </button>
+
+  <button
+    onClick={() => paginate(1)}
+    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 transition p-0"
+  >
+    <img src={arrow} alt="Right arrow" className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rotate-180" />
+  </button> */}
+
+  Hero Dots + Pause/Play
+  <div className="absolute bottom-4 sm:bottom-6 w-full flex justify-center items-center gap-3 z-20">
+    {slides.map((_, index) => (
+      <button
+        key={index}
+        onClick={() =>
+          setActiveSlide([index, index > activeSlide ? 1 : -1])
+        }
+        className={`w-3 h-3 rounded-full ${
+          activeSlide === index ? "bg-white" : "bg-white/40 hover:bg-black/60"
+        }`}
+      />
+    ))}
+
+    {/* <button
+      onClick={() => setIsPlaying(!isPlaying)}
+      className="ml-4 bg-white/80 hover:bg-white rounded-full p-2 transition"
+    >
+      {isPlaying ? (
+        <FaPause size={14} color="black" />
+      ) : (
+        <FaPlay size={14} color="black" />
+      )}
+    </button> */}
+  </div>
+
+</section>
+
+
 {/* ---------------- Sustainability Section ---------------- */}
 <section
   id="sustainability"
-  className="relative py-20 bg-[#0c1a25] text-white overflow-hidden"
+  className="relative py-20 bg-gray-50 text-gray-900 overflow-hidden"
 >
-  {/* Subtle animated background gradient (still, no scroll effect) */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#00f0ff]/5 via-[#0c1a25] to-[#00f0ff]/5"></div>
+  {/* Subtle animated background gradient */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#e0f7ff]/10 via-gray-50 to-[#e0f7ff]/10"></div>
 
   <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
     {/* Text Section */}
@@ -310,15 +327,14 @@ const Hero = () => {
       viewport={{ once: true, amount: 0.4 }}
       className="space-y-6"
     >
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
-        Radial Circle Group{" "}
-        <span className="text-[#00f0ff]"></span>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-[#004080]">
+        Radial Circle Group
       </h2>
 
-      <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
+      <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
         Radial Circle Group consists of companies established between 1995 and
         today, delivering world-class solutions in{" "}
-        <span className="font-semibold">
+        <span className="font-semibold text-[#004080]">
           Telecommunications, Marine Electronics, Navigational Aids,
           Security Systems, and Industrial Automation.
         </span>{" "}
@@ -329,8 +345,8 @@ const Hero = () => {
 
       <motion.a
         href="/WhoWeAre"
-        whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #00f0ff" }}
-        className="inline-block mt-4 px-6 py-3 bg-[#00f0ff]/10 border border-[#00f0ff]/40 text-[#00f0ff] font-semibold rounded-xl transition-all duration-300 hover:bg-[#00f0ff]/20 hover:border-[#00f0ff]"
+        whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #004080" }}
+        className="inline-block mt-4 px-6 py-3 bg-[#004080] text-white font-semibold rounded-xl transition-all duration-300 hover:bg-[#0059b3]"
       >
         Learn More
       </motion.a>
@@ -349,11 +365,12 @@ const Hero = () => {
           alt="Radial Circle Group"
           className="w-full h-[280px] md:h-[380px] object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-700 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700 rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-700 rounded-2xl"></div>
       </div>
     </motion.div>
   </div>
 </section>
+
 
 
 
@@ -392,11 +409,11 @@ const Hero = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight"
+      className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  leading-tight tracking-tight"
     >
-      Empowering Africa's{" "}
-      <span className="text-[#00f0ff]">Infrastructure</span> Through
-      <br className="hidden sm:block" /> Technical Innovation, Marine Excellence, and Oilfield Support
+      Engineering,{" "}
+      <span className="text-white">Procurement,</span> Installation,
+      <br className="hidden sm:block" /> and Commissioning (EPIC)
     </motion.h1>
 
     <motion.p
@@ -437,7 +454,7 @@ const Hero = () => {
         }}
         className="px-6 py-3 bg-white text-[#0c1a25] rounded-xl font-semibold transition-all duration-300"
       >
-        Our Purpose
+        Our Mission
       </motion.a>
     </motion.div>
   </div>
@@ -446,17 +463,15 @@ const Hero = () => {
   <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-[#00f0ff]/10 to-transparent blur-2xl opacity-70" />
 </section>
 
-
-   {/* ---------------- Mission Section ---------------- */}
+{/* ---------------- Mission Section ---------------- */}
 <section
   id="mission"
-  className="relative py-20 bg-[#0c1a25] text-white overflow-hidden"
+  className="relative py-12 bg-gray-50 text-gray-900 overflow-hidden" // reduced from py-20 to py-12
 >
-  {/* Subtle animated background gradient */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#00f0ff]/5 via-[#0c1a25] to-[#00f0ff]/5 animate-gradientMove"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-[#e0f7ff]/10 via-gray-50 to-[#e0f7ff]/10 animate-gradientMove"></div>
 
   <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
-    {/* Text Section */}
+    {/* Text */}
     <motion.div
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -464,26 +479,26 @@ const Hero = () => {
       viewport={{ once: true }}
       className="space-y-6"
     >
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
-        Our <span className="text-[#00f0ff]">Strength</span>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-[#004080]">
+        Our <span className="text-[#0073e6]">Strength</span>
       </h2>
 
-      <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
-        We have marketing and technical support relationships with our partners besides, 
-        we have the availability of competent, seasoned and manufacturer trained staff 
-        in our areas of operations at your service.
+      <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
+        We have marketing and technical support relationships with our partners besides, we have the availability of competent, 
+        seasoned and manufacturer trained staff in our areas of operations at your service.
       </p>
 
       <motion.a
         href="#purpose"
-        whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #00f0ff" }}
-        className="inline-block mt-4 px-6 py-3 bg-[#00f0ff]/10 border border-[#00f0ff]/40 text-[#00f0ff] font-semibold rounded-xl transition-all duration-300 hover:bg-[#00f0ff]/20 hover:border-[#00f0ff]"
+        whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #004080" }}
+        className="inline-block mt-4 px-6 py-3 bg-[#004080] text-white font-semibold rounded-xl transition-all duration-300 hover:bg-[#0059b3]"
       >
-        Discover Our Purpose
+        View Our Mission
+
       </motion.a>
     </motion.div>
 
-    {/* Image Section */}
+    {/* Image */}
     <motion.div
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -496,20 +511,18 @@ const Hero = () => {
           alt="Mission"
           className="w-full h-[280px] md:h-[380px] object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-700 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700 rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-700 rounded-2xl"></div>
       </div>
     </motion.div>
   </div>
 </section>
 
-
-      {/* ---------------- Purpose Section ---------------- */}
+{/* ---------------- Purpose Section ---------------- */}
 <section
   id="purpose"
-  className="relative py-20 bg-[#0c1a25] text-white overflow-hidden"
+  className="relative py-12 bg-gray-50 text-gray-900 overflow-hidden -mt-12" // added negative margin to pull it closer
 >
-  {/* Animated background lighting */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#00f0ff]/5 via-[#0c1a25] to-[#00f0ff]/5 animate-gradientMove"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-[#e0f7ff]/10 via-gray-50 to-[#e0f7ff]/10 animate-gradientMove"></div>
 
   <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
     {/* Image */}
@@ -526,7 +539,7 @@ const Hero = () => {
           alt="Purpose"
           className="w-full h-[280px] md:h-[380px] object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-700 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700 rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-700 rounded-2xl"></div>
       </div>
     </motion.div>
 
@@ -538,145 +551,28 @@ const Hero = () => {
       viewport={{ once: true }}
       className="space-y-6 order-1 lg:order-2"
     >
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
-        Our <span className="text-[#00f0ff]">Purpose</span>
+     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-[#004080]">
+        Our <span className="text-[#0073e6]">Mission</span>
       </h2>
 
-      <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
-        To redefine Africa’s industrial and marine service landscape by balancing
-        operational excellence with sustainability, delivering reliable, safe,
-        and innovative solutions to clients across sectors.
+
+      <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
+        Our mission is to be one of the leading technical system integrators
+      in Africa with solid backing from our technical partners locally and
+      internationally who offers our organization technical support to
+      meet our clients’ needs.
       </p>
 
       <motion.a
         href="#values"
-        whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #00f0ff" }}
-        className="inline-block mt-4 px-6 py-3 bg-[#00f0ff]/10 border border-[#00f0ff]/40 text-[#00f0ff] font-semibold rounded-xl transition-all duration-300 hover:bg-[#00f0ff]/20 hover:border-[#00f0ff]"
+        whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #004080" }}
+        className="inline-block mt-4 px-6 py-3 bg-[#004080] text-white font-semibold rounded-xl transition-all duration-300 hover:bg-[#0059b3]"
       >
         Explore Our Values
       </motion.a>
     </motion.div>
   </div>
 </section>
-
-
-{/* ---------------- Impact Section ---------------- */}
-<section
-  id="impact"
-  className="py-20 bg-[#0c1a25] text-white overflow-hidden"
->
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true }}
-    className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 text-center"
-  >
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12">
-      OUR <span className="text-[#00f0ff]">IMPACT</span> IN NUMBERS
-    </h2>
-
-   {/* Stats Grid */}
-<div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-  {[
-    { end: 100, label: "Commitment to Client Satisfaction" },
-    { end: 100, label: "Certified Professionals" },
-    { end: 100, label: "Strategic Alliances with OEMs" },
-    { end: 100, label: "Industry Leadership" },
-  ].map((stat, i) => {
-    const radius = 45;
-    const circumference = 2 * Math.PI * radius;
-    const percentage = Math.min(stat.end, 100); // optional cap at 100%
-
-    return (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ delay: i * 0.2, duration: 0.8 }}
-        viewport={{ once: true }}
-        whileHover={{ y: -8, scale: 1.05 }}
-        className="bg-[#102a3c]/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-[#00f0ff]/20 hover:border-[#00f0ff]/60 transition-all duration-500 flex flex-col items-center justify-center"
-      >
-        <motion.svg
-          width="120"
-          height="120"
-          viewBox="0 0 120 120"
-          className="mb-4"
-        >
-          {/* Background Circle */}
-          <circle
-            cx="60"
-            cy="60"
-            r={radius}
-            stroke="#1e3a5f"
-            strokeWidth="10"
-            fill="none"
-          />
-          {/* Animated Progress Circle */}
-          <motion.circle
-            cx="60"
-            cy="60"
-            r={radius}
-            stroke="#00f0ff"
-            strokeWidth="10"
-            fill="none"
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            strokeDashoffset={circumference}
-            animate={{
-              strokeDashoffset: circumference - (percentage / 100) * circumference,
-            }}
-            transition={{ duration: 2, ease: "easeOut" }}
-          />
-          {/* Centered Text */}
-          <text
-            x="50%"
-            y="50%"
-            textAnchor="middle"
-            dy=".3em"
-            className="fill-[#00f0ff] text-2xl font-extrabold"
-          >
-            {stat.end}%
-          </text>
-        </motion.svg>
-
-        <p className="text-center text-gray-300 text-sm sm:text-base mt-2">
-          {stat.label}
-        </p>
-      </motion.div>
-    );
-  })}
-</div>
-
-
-    {/* Commitment Buttons */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.3 }}
-      viewport={{ once: true }}
-      className="flex flex-wrap justify-center gap-6 mt-16"
-    >
-      {[
-        { label: "ISO 9001:2015 Certificate", link: "/cert/iso9001" },
-        { label: "ISO 45001:2018 Certificate", link: "/cert/iso45001" },
-        { label: "Quality Policy Statement", link: "/cert/quality" },
-        { label: "Our OH & S Policy", link: "/cert/ohs" },
-      ].map((btn, i) => (
-        <Link
-          key={i}
-          to={btn.link}
-          className="relative px-6 py-3 rounded-xl bg-[#00f0ff] font-semibold text-[#00f0ff] border border-[#00f0ff]/50 hover:border-[#00f0ff] hover:bg-[#00f0ff]/10 transition-all duration-300 shadow-md"
-        >
-          {btn.label}
-        </Link>
-      ))}
-    </motion.div>
-  </motion.div>
-</section>
-
-
 
 
 {/* ---------------- Values Section ---------------- */}
@@ -695,36 +591,51 @@ const Hero = () => {
       <span className="text-[#00f0ff]">Our</span> Core Values
     </h2>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
       {[
         {
           title: "Integrity",
-          desc: "We operate with honesty and transparency in every offshore and onshore operation, ensuring trust and reliability for our clients.",
+          desc: "Upholding honesty and transparency in all dealings.",
           icon: (
             <FaFlag className="text-[#00f0ff] text-4xl mx-auto mb-4 drop-shadow-glow" />
           ),
         },
         {
           title: "Innovation",
-          desc: "We leverage cutting-edge technology and creative engineering solutions to optimize marine and technical services.",
+          desc: "Encouraging creativity and new ideas to drive progress.",
           icon: (
             <FaBolt className="text-[#00f0ff] text-4xl mx-auto mb-4 drop-shadow-glow" />
           ),
         },
         {
           title: "Excellence",
-          desc: "Delivering top-tier oil support, technical, and marine services through skilled professionals and stringent safety protocols.",
+          desc: "Committed to high standards in service delivery.",
           icon: (
             <FaChartLine className="text-[#00f0ff] text-4xl mx-auto mb-4 drop-shadow-glow" />
           ),
         },
         {
-          title: "Sustainability",
-          desc: "We implement environmentally conscious practices to reduce operational impact while promoting safe and sustainable solutions.",
+          title: "Accountability",
+          desc: "Taking responsibility for actions and outcomes.",
           icon: (
             <FaLeaf className="text-[#00f0ff] text-4xl mx-auto mb-4 drop-shadow-glow" />
           ),
         },
+        {
+  title: "Respect",
+  desc: "Treating everyone with dignity and valuing their contributions.",
+  icon: (
+    <FaHandshake className="text-[#00f0ff] text-4xl mx-auto mb-4 drop-shadow-glow" />
+  ),
+},
+{
+  title: "Customer Satisfaction",
+  desc: "Prioritizing customer needs and satisfaction.",
+  icon: (
+    <FaSmileBeam className="text-[#00f0ff] text-4xl mx-auto mb-4 drop-shadow-glow" />
+  ),
+},
+
       ].map((val, i) => (
         <motion.div
           key={i}

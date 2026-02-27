@@ -238,16 +238,17 @@ const Footer = () => {
                   <br />
                   P.O.Box 54215 Falomo, Ikoyi, Lagos, Nigeria.
                 </p>
-                <p>📞+234-805-569-9005</p> <p>📞+234-803-340-3578</p>
+                <p>📞+234-803-340-3578 </p>  <p>📞+234-802-323-8477</p>
               </div>
 
               <div>
                 <p className="font-medium text-gray-100">PORT HARCOURT</p>
                 <p>
-                  43/45 Elelenwo Street,
-                  <br />
-                  G.R.A. Phase 1, Port Harcourt, Rivers State, Nigeria.
+                  15 Jessy  & Jenny Road, off Peter Odili Road, 
+                  Inu community Abuloma Kingdom, Trans-Amadi, Industrial 
+                  Layout, PHC, Rivers State.      
                 </p>
+                <p>📞234-1-8038951342 </p>  <p>📞+234-9062700099</p>
               </div>
 
               <div>

@@ -50,69 +50,70 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white px-6 py-12"
+   <section
+  id="contact"
+  className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white px-6 py-12"
+>
+  <div className="max-w-lg w-full">
+    <h2 className="text-3xl font-bold text-center mb-8">
+      Contact <span className="text-[#00f0ff]">Us</span>
+    </h2>
+
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-5 bg-gray-800 p-8 rounded-2xl shadow-lg"
     >
-      <div className="max-w-lg w-full">
-        <h2 className="text-3xl font-bold text-center mb-8">
-          Contact <span className="text-[#00f0ff]">Us</span>
-        </h2>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        value={formData.name}
+        onChange={handleChange}
+        className="p-3 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]"
+        required
+      />
 
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-5 bg-gray-800 p-8 rounded-2xl shadow-lg"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="p-3 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]"
-            required
-          />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        value={formData.email}
+        onChange={handleChange}
+        className="p-3 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]"
+        required
+      />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="p-3 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]"
-            required
-          />
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        value={formData.message}
+        onChange={handleChange}
+        className="p-3 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00f0ff] h-32 resize-none"
+        required
+      ></textarea>
 
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            className="p-3 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00f0ff] h-32 resize-none"
-            required
-          ></textarea>
+      <button
+        type="submit"
+        disabled={status.loading}
+        className="bg-[#00f0ff] text-gray-900 font-semibold py-3 rounded-md hover:bg-[#00d4e0] transition disabled:opacity-50"
+      >
+        {status.loading ? "Sending..." : "Send Message"}
+      </button>
 
-          <button
-            type="submit"
-            disabled={status.loading}
-            className="bg-[#00f0ff] text-gray-900 font-semibold py-3 rounded-md hover:bg-[#00d4e0] transition disabled:opacity-50"
-          >
-            {status.loading ? "Sending..." : "Send Message"}
-          </button>
+      {status.success && (
+        <p className="text-green-400 text-center font-medium">
+          ✅ {status.success}
+        </p>
+      )}
+      {status.error && (
+        <p className="text-red-400 text-center font-medium">
+          ❌ {status.error}
+        </p>
+      )}
+    </form>
+  </div>
+</section>
 
-          {status.success && (
-            <p className="text-green-400 text-center font-medium">
-              ✅ {status.success}
-            </p>
-          )}
-          {status.error && (
-            <p className="text-red-400 text-center font-medium">
-              ❌ {status.error}
-            </p>
-          )}
-        </form>
-      </div>
-    </section>
   );
 };
 

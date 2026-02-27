@@ -28,7 +28,6 @@ import rctslPartner24 from "../assets/rctsl-partner-24.png";
 import rctslPartner25 from "../assets/rctsl-partner-25.png";
 import rctslPartner26 from "../assets/rctsl-partner-26.png";
 
-
 import rctslClient1 from "../assets/rctsl-client-1.png";
 import rctslClient2 from "../assets/rctsl-client-2.png";
 import rctslClient3 from "../assets/rctsl-client-3.png";
@@ -59,11 +58,7 @@ import serviceNavigation from "../assets/services/marine.jpg";
 import serviceSecurity from "../assets/services/security.jpg";
 import radar from "../assets/services/radarand.jpg";
 
-
-
-
 const RCTSL = () => {
-  // small framer-motion variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -73,7 +68,6 @@ const RCTSL = () => {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.45 } },
   };
 
-  // ---- DATA ----
   const coreCompetencies = [
     "Engineering Design",
     "Procurement",
@@ -142,7 +136,7 @@ const RCTSL = () => {
         "GMDSS Annual Radio Survey & VDR APT Service",
         "Marine and Aviation communication systems",
         "AIS, VDR, SSAS, EPIRB, SART, GPS, DGPS",
-        "Radar, Gyrocompass — procurement, installation, commissioning & maintenance",
+        "Radar, Gyrocompass, procurement, installation, commissioning & maintenance",
         "Vessel Tracking Systems",
       ],
     },
@@ -159,154 +153,156 @@ const RCTSL = () => {
     },
   ];
 
-
-  
-
-  // ---- RENDER ----
   return (
     <div className="font-sans text-gray-900">
-      {/* HERO */}
-      <header className="relative text-white py-14">
-        {/* Background image */}
-        <div className="absolute inset-0 bg-[url('../src/assets/bg-rctsl.png')] bg-cover bg-center"></div>
+     {/* HERO */}
+<header className="relative text-white py-20 font-sans">
+  {/* Background Image */}
+  <div className="absolute inset-0 bg-[url('../src/assets/bg-rctsl.png')] bg-cover bg-center"></div>
 
-        {/* Overlay fade */}
-        <div className="absolute inset-0 bg-black/50"></div>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
 
-        {/* Content */}
-        <div className="relative max-w-6xl mx-auto px-6 md:px-8">
-          <motion.div
-            initial="visible"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="flex flex-col lg:flex-row items-center gap-8"
+  <div className="relative max-w-7xl mx-auto px-6 md:px-10">
+    <motion.div
+      initial="visible"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+      className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+    >
+      {/* LEFT CONTENT */}
+      <div className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+          Radial Circle Technical Services Limited
+          <span className="block text-blue-300">(RCTSL)</span>
+        </h2>
+
+        <p className="text-gray-200 max-w-xl text-sm md:text-base leading-relaxed">
+          Delivering demand-driven technical solutions across Africa through
+          innovation, strong partnerships, and excellence.
+        </p>
+
+        {/* CTA */}
+        <div className="flex flex-wrap gap-4 pt-4">
+          {/* <a
+            href="callto:+2348033403578"
+            className="inline-flex items-center gap-2 bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+            download
           >
-            <div className="flex-1">
-              <h2 className="text-xl sm:text-xl md:text-xl lg:text-5xl font-bold leading-tight">
-                Radial Circle Technical Services Limited (RCTSL)
-              </h2>
+            📞 +234-803-340-3578 📞+234-802-323-8477
+          </a> */}
 
-              <div className="mt-6 space-y-6">
-  {/* Mission Statement */}
-  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg transition hover:scale-[1.02] hover:shadow-xl duration-300">
-    <h3 className="text-xl md:text-2xl font-semibold text-blue-300 mb-3">
-      Mission Statement
-    </h3>
-    <p className="text-gray-100 text-sm sm:text-base md:text-lg leading-relaxed">
-      Our mission is to be one of the leading technical system integrators in
-      Africa with solid backing from our technical partners locally and
-      internationally, who provide our organization with technical support to
-      meet our clients’ needs.
-    </p>
-  </div>
-
-  {/* Vision Statement */}
-  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg transition hover:scale-[1.02] hover:shadow-xl duration-300">
-    <h3 className="text-xl md:text-2xl font-semibold text-blue-300 mb-3">
-      Vision Statement
-    </h3>
-    <p className="text-gray-100 text-sm sm:text-base md:text-lg leading-relaxed">
-      Our vision is to provide services and solutions that are demand-driven in
-      Africa with strong technical partnerships and a commitment to excellence.
-    </p>
-  </div>
-</div>
-
-
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="callto:+2348033403578"
-                  className="inline-block bg-white text-blue-800 font-semibold px-4 py-2 rounded-md shadow hover:shadow-lg transition"
-                  download
-                >
-                  📞+234-805-569-9005 📞+234-803-340-3578
-                </a>
-
-                <a
-                  href="mailto:@radialcircle.com"
-                  className="inline-block bg-green-50 text-white font-semibold px-4 py-2 rounded-md shadow hover:bg-[#356bb0] transition"
-                >
-                  enquiry@radialcircle.com
-                </a>
-              </div>
-            </div>
-          </motion.div>
+          <a
+            href="mailto:@radialcircle.com"
+            className="inline-flex items-center gap-2 bg-blue-700/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-800 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+          >
+            ✉ enquiry@radialcircle.com
+          </a>
         </div>
-      </header>
+      </div>
 
-      {/* COMPANY OVERVIEW */}
-      <section className="py-12 bg-blue-50">
-        <div className="max-w-6xl mx-auto px-6 md:px-8">
-          <motion.h2
-            variants={fadeInUp}
-            initial="visible"
-            whileInView="visible"
-            className="text-2xl md:text-3xl font-semibold text-blue-900"
-          >
-            Company Overview
-          </motion.h2>
-
-          <motion.p
-            variants={fadeInUp}
-            initial="visible"
-            whileInView="visible"
-            className="mt-4 text-justify text-gray-700"
-          >
-            Radial Circle is a systems integrator established in 1995, with
-            sister companies in Angola, Mozambique, Senegal and Uganda. We
-            partner with major OEMs globally and represent them across West
-            Africa. We provide world-class hybrid & integrated engineering
-            solutions across onshore & offshore environments including
-            Processing Plants, Offshore platforms, FPSOs, Drilling Rigs and
-            Marine Vessels. Our client base includes IOCs, independents, NOCs,
-            marginal field owners, EPCs, major engineering contractors, marine
-            companies and oil service companies.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* COMPANY INTRO */}
-      <section className="max-w-6xl mx-auto px-6 md:px-8 py-8">
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          className="bg-blue-50 rounded-2xl p-6 shadow-inner"
-        >
-          <h3 className="text-lg font-semibold text-blue-800">
-            Company Introduction
+      {/* RIGHT GLASS CARDS */}
+      <div className="space-y-6">
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-xl transition hover:bg-white/15 hover:scale-[1.02] duration-300">
+          <h3 className="text-lg md:text-xl font-semibold text-blue-300 mb-4 tracking-wide">
+            Mission Statement
           </h3>
-          <ul className="mt-3 list-disc list-inside text-gray-700 space-y-1">
-            <li>Established in 1995</li>
-            <li>Engineering, Procurement, Installation and Commissioning (EPIC)</li>
-            <li>Post Installation Support and Maintenance</li>
-            <li>
-              Provider of world-class hybrid & integrated engineering solutions
-              & services
-            </li>
-            <li>
-              Onshore & Offshore inclusive of Processing Plants, Offshore
-              platforms, FPSOs, Drilling Rigs and Marine Vessels
-            </li>
-            <li>
-              Clients include IOCs, Independents, NOCs, Marginal field owners,
-              EPCs, Major Engineering contractors, Marine companies and Oil
-              service companies
-            </li>
-            <li>Sister companies in Angola, Mozambique, Senegal and Uganda</li>
-            <li>Technical partnership with major OEMs globally</li>
-          </ul>
-        </motion.div>
-      </section>
+          <p className="text-gray-100 text-sm md:text-base leading-relaxed">
+            Our mission is to be one of the leading technical system integrators
+in Africa with solid backing from our technical partners locally and
+internationally who offers our organization technical support to
+meet our clients’ needs.
+          </p>
+        </div>
+
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-xl transition hover:bg-white/15 hover:scale-[1.02] duration-300">
+          <h3 className="text-lg md:text-xl font-semibold text-blue-300 mb-4 tracking-wide">
+            Vision Statement
+          </h3>
+          <p className="text-gray-100 text-sm md:text-base leading-relaxed">
+            Our vision is to provide services and solutions that are demand
+driven in Africa with solid backing from our technical partners.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</header>
+
+{/* Company Overview */}
+<section className="relative py-20 px-6 md:px-16 lg:px-32 bg-gray-50">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-blue-900">
+      Company Overview
+    </h2>
+    <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-blue-700"></div>
+
+    <div className="mt-10 bg-white/90 backdrop-blur border border-gray-200 rounded-2xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition duration-300">
+      <p className="text-gray-700 text-sm md:text-base leading-relaxed text-justify">
+        Radial Circle is a systems integrator established in 1995, with
+        sister companies in Ghana, Mozambique, Senegal and Uganda. We
+        partner with major OEMs globally and represent them across West
+        Africa. 
+        <br />
+        <br />
+        We provide world-class hybrid & integrated engineering
+        solutions across onshore & offshore environments including
+        Processing Plants, Offshore platforms, FPSOs, Drilling Rigs and
+        Marine Vessels. Our client base includes IOCs, independents, NOCs,
+        marginal field owners, EPCs, major engineering contractors, marine
+        companies and oil service companies.
+      </p>
+    </div>
+  </div>
+</section>
+
+{/* COMPANY INTRO */}
+<section className="py-16 max-w-7xl mx-auto px-6 md:px-8">
+  <motion.div
+    variants={fadeInUp}
+    initial="hidden"
+    whileInView="visible"
+    className="bg-white/60 backdrop-blur-md rounded-3xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-500"
+  >
+    <h3 className="text-xl md:text-2xl font-bold text-blue-800 mb-6 tracking-wide" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      Company Introduction
+    </h3>
+
+    <ul className="grid md:grid-cols-2 gap-4 text-gray-700 text-lg leading-relaxed list-none">
+      <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-800 before:rounded-full">
+        Established in 1995
+      </li>
+      <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-800 before:rounded-full">
+        Engineering, Procurement, Installation and Commissioning (EPIC)
+      </li>
+      <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-800 before:rounded-full">
+        Post Installation Support and Maintenance
+      </li>
+      <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-800 before:rounded-full">
+        Provider of world-class hybrid & integrated engineering solutions & services
+      </li>
+      <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-800 before:rounded-full">
+        Onshore & Offshore inclusive of Processing Plants, Offshore platforms, FPSOs, Drilling Rigs and Marine Vessels
+      </li>
+      <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-800 before:rounded-full">
+        Clients include IOCs, Independents, NOCs, Marginal field owners, EPCs, Major Engineering contractors, Marine companies and Oil service companies
+      </li>
+      <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-800 before:rounded-full">
+        Sister companies in Angola, Mozambique, Senegal and Uganda
+      </li>
+      <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-800 before:rounded-full">
+        Technical partnership with major OEMs globally
+      </li>
+    </ul>
+  </motion.div>
+</section>
+
 
       {/* CORE COMPETENCIES */}
       <section className="bg-white py-10">
         <div className="max-w-6xl mx-auto px-6 md:px-8">
-          <h3 className="text-2xl font-semibold text-blue-800">
-            Core Competencies
-          </h3>
+          <h3 className="text-2xl font-semibold text-blue-800">Core Competencies</h3>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {coreCompetencies.map((c, idx) => (
               <motion.div
@@ -324,91 +320,122 @@ const RCTSL = () => {
       </section>
 
       {/* SERVICES */}
-<section className="py-12 bg-blue-50">
-  <div className="max-w-7xl mx-auto px-6 md:px-8">
-    <h2 className="text-2xl md:text-3xl font-bold text-blue-900">
-      Our Range of Services
-    </h2>
+<section className="py-16 px-6 lg:px-20 bg-blue-50 font-sans">
+  <div className="max-w-7xl mx-auto">
 
-  <div className="mt-6 grid gap-8 md:grid-cols-2">
-  {services.map((s, idx) => (
-    <motion.div
-      key={idx}
-      variants={fadeInUp}
+    {/* Section Header */}
+    <motion.h2
       initial="hidden"
       whileInView="visible"
-      className="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+      className="text-2xl md:text-3xl font-semibold text-blue-900 mb-10 tracking-tight"
     >
-      {/* 🖼️ Image */}
-      <div className="w-full h-60 overflow-hidden">
-        <img
-          src={s.img}
-          alt={s.title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-        />
-      </div>
+      Our Range of Services
+    </motion.h2>
 
-      {/* Text Content */}
-      <div className="p-6">
-        <h3 className="font-semibold text-blue-700 text-lg mb-3">{s.title}</h3>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
-          {s.bullets.map((b, i) => (
-            <li key={i}>{b}</li>
-          ))}
-        </ul>
-      </div>
-    </motion.div>
-  ))}
-</div>
+    <div className="grid gap-10 md:grid-cols-2">
+      {services.map((s, idx) => (
+        <motion.div
+          key={idx}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col"
+        >
+          {/* Image */}
+          <div className="w-full h-60 overflow-hidden">
+            <img
+              src={s.img}
+              alt={s.title}
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 className="text-lg font-semibold text-blue-800 mb-4">
+                {s.title}
+              </h3>
+
+              <ul className="grid gap-3 text-sm text-gray-700 font-medium">
+                {s.bullets.map((b, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3"
+                  >
+                    <span className="mt-2 w-2 h-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+                    <span className="leading-relaxed">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
 
   </div>
 </section>
 
-
-      {/* SURVEILLANCE SYSTEMS */}
-<section className="py-10 bg-blue-50">
-  <div className="max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-8 items-center">
-    {/* Text Section */}
+{/* SURVEILLANCE SYSTEMS */}
+<section className="py-16 px-6 lg:px-20 bg-blue-50 font-sans">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    
+    {/* Text Content */}
     <div>
       <motion.h3
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        className="text-xl font-semibold text-blue-800"
+        viewport={{ once: true }}
+        className="text-xl md:text-2xl font-semibold text-blue-800 tracking-tight"
       >
         Surveillance System (Radar & Camera)
       </motion.h3>
+
       <motion.ul
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        className="mt-4 list-disc list-inside text-gray-700 space-y-2"
+        viewport={{ once: true }}
+        className="mt-6 grid gap-3 text-sm md:text-base text-gray-700 font-medium"
       >
-        <li>Detect more threats quickly and accurately with low operator workload.</li>
-        <li>High resolution radar with 360° coverage and low false alarm rate.</li>
-        <li>Radar tracking of 100 targets with slew-to-cue of camera sensors.</li>
-        <li>Share data to multiple operators, multi-window capability, graded response workflow.</li>
+        {[
+          "Detect more threats quickly and accurately with low operator workload.",
+          "High-resolution radar with 360° coverage and low false alarm rate.",
+          "Radar tracking of up to 100 targets with slew-to-cue camera sensors.",
+          "Multi-operator data sharing, multi-window display, and graded response workflow.",
+        ].map((item, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <span className="mt-2 w-2.5 h-2.5 rounded-full bg-blue-600 flex-shrink-0"></span>
+            <span className="leading-relaxed">{item}</span>
+          </li>
+        ))}
       </motion.ul>
     </div>
 
-    {/* Video Placeholder (Auto-played Video) */}
-<motion.div
-  variants={fadeInUp}
-  initial="hidden"
-  whileInView="visible"
-  className="w-full h-64 rounded-xl overflow-hidden shadow-md"
->
-  <img
-    className="w-full h-full object-cover rounded-xl"
-    src= {radar} // 👉 replace with your video path
-  />
-</motion.div>
+    {/* Image */}
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="w-full h-64 rounded-2xl overflow-hidden shadow-lg"
+    >
+      <img
+        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+        src={radar}
+        alt="Surveillance Radar and Camera System"
+      />
+    </motion.div>
+
   </div>
 </section>
 
- 
-
-            {/* PARTNERS SECTION */}
+      {/* PARTNERS */}
       <section className="py-16 px-6 lg:px-20 bg-white">
         <motion.h2
           initial="hidden"
@@ -423,10 +450,10 @@ const RCTSL = () => {
           {[
             rctslPartner1, rctslPartner2, rctslPartner3, rctslPartner5,
             rctslPartner6, rctslPartner8, rctslPartner9, rctslPartner10,
-             rctslPartner12, rctslPartner13, rctslPartner14, rctslPartner15,
+            rctslPartner12, rctslPartner13, rctslPartner14, rctslPartner15,
             rctslPartner16, rctslPartner18, rctslPartner19, rctslPartner20,
-            rctslPartner21, rctslPartner22, rctslPartner23, rctslPartner24, rctslPartner25,
-            rctslPartner26, 
+            rctslPartner21, rctslPartner22, rctslPartner23, rctslPartner24,
+            rctslPartner25, rctslPartner26,
           ].map((logo, idx) => (
             <motion.div
               key={idx}
@@ -446,7 +473,7 @@ const RCTSL = () => {
         </div>
       </section>
 
-      {/* CLIENTS SECTION */}
+      {/* CLIENTS */}
       <section className="py-16 px-6 lg:px-20 bg-blue-50">
         <motion.h2
           initial="hidden"
@@ -482,7 +509,6 @@ const RCTSL = () => {
           ))}
         </div>
       </section>
-
     </div>
   );
 };

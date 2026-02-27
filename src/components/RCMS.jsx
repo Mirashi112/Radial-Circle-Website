@@ -203,163 +203,210 @@ const classifications = [
   return (
    <div className="font-sans text-gray-900">
       {/* HERO */}
-      <header className="relative text-white py-14">
-        {/* Background image */}
-        <div className="absolute inset-0 bg-[url('../src/assets/ships.jpg')] bg-cover bg-center"></div>
+<header className="relative text-white py-20 font-sans">
+  {/* Background Image */}
+  <div className="absolute inset-0 bg-[url('../src/assets/ships.jpg')] bg-cover bg-center"></div>
 
-        {/* Overlay fade */}
-        <div className="absolute inset-0 bg-black/50"></div>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
 
-        {/* Content */}
-        <div className="relative max-w-6xl mx-auto px-6 md:px-8">
-          <motion.div
-            initial="visible"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="flex flex-col lg:flex-row items-center gap-8"
+  {/* Content */}
+  <div className="relative max-w-7xl mx-auto px-6 md:px-10">
+    <motion.div
+      initial="visible"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+      className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+    >
+      {/* LEFT CONTENT */}
+      <div className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+          Radial Circle Marine Services Limited
+          <span className="block text-green-600">(RCMS)</span>
+        </h2>
+
+        <p className="text-gray-200 max-w-xl text-sm md:text-base leading-relaxed">
+          Providing world-class marine support services with safety, efficiency,
+          and international compliance at the core.
+        </p>
+
+        {/* CTA */}
+        <div className="flex flex-wrap gap-4 pt-4">
+          {/* <a
+            href="callto:+2348033403578"
+            className="inline-flex items-center gap-2 bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+            download
           >
-            <div className="flex-1">
-  <h2 className="text-xl sm:text-xl md:text-xl lg:text-5xl font-bold leading-tight">
-    Radial Circle Marine Services Limited (RCMS)
-  </h2>
+            📞 +234-803-340-3578 📞+234-802-323-8477
+          </a> */}
 
-             <div className="mt-6">
-  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg transition hover:scale-[1.02] hover:shadow-xl duration-300 max-w-2xl mx-auto lg:mx-0">
-    <h3 className="text-xl md:text-2xl font-semibold text-blue-300 mb-3">
-      Mission
-    </h3>
-    <p className="text-gray-100 text-sm sm:text-base md:text-lg leading-relaxed">
-      To be a leading provider of marine services in Africa, delivering
-      innovative and reliable solutions that meet international standards while
-      exceeding client expectations.
-    </p>
-  </div>
-</div>
-
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="callto:+2348033403578"
-                  className="inline-block bg-white text-blue-800 font-semibold px-4 py-2 rounded-md shadow hover:shadow-lg transition"
-                  download
-                >
-                 📞+234-805-569-9005 📞+234-803-340-3578
-                </a>
-
-                <a
-                  href="mailto:rcms@radialcircle.com"
-                  className="inline-block bg-green-50 text-white font-semibold px-4 py-2 rounded-md shadow hover:bg-[#356bb0] transition"
-                >
-                  rcms@radialcircle.com
-                </a>
-              </div>
-            </div>
-          </motion.div>
+          <a
+            href="mailto:rcms@radialcircle.com"
+            className="inline-flex items-center gap-2 bg-green-900 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-800 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+          >
+            ✉ rcms@radialcircle.com
+          </a>
         </div>
-      </header>
+      </div>
 
+      {/* RIGHT GLASS CARD */}
+      <div>
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-xl transition hover:bg-white/15 hover:scale-[1.02] duration-300 max-w-xl ml-auto">
+          <h3 className="text-lg md:text-xl font-semibold text-blue-300 mb-4 tracking-wide">
+            Mission
+          </h3>
+          <p className="text-gray-100 text-sm md:text-base leading-relaxed">
+            To be a leading provider of marine services in Africa, delivering
+            innovative and reliable solutions that meet international standards
+            while exceeding client expectations.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</header>
 
-      {/* Company Overview */}
-<section className="py-16 px-6 md:px-16 lg:px-32 bg-green-50">
+{/* Company Overview */}
+<section className="relative py-20 px-6 md:px-16 lg:px-32 bg-gray-50">
   <div className="max-w-6xl mx-auto text-center">
-    <h2 className="text-2xl md:text-3xl font-semibold text-green-900">
+    <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-green-900">
       Company Overview
     </h2>
-    <p className="mt-4 text-gray-700 text-base md:text-lg">
-      Radial Circle Marine Services Limited is a subsidiary of the Radial 
-Circle Group incorporated in 2007 which specializes in the provision 
-of navigation, communication, and integration solutions on board 
-various vessels in West Africa and the Gulf of Guinea.
+    <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-green-700"></div>
 
-Since its inception, our company emphasized developing a sound 
-technological base. In view of this, significant resources have been 
-spent on training staff and creating technical partnerships with various
-high technology companies worldwide. This led to the agency, 
-distributorship, and technical support services.
-    </p>
+    <div className="mt-10 bg-white/90 backdrop-blur border border-gray-200 rounded-2xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition duration-300">
+      <p className="text-gray-700 text-sm md:text-base leading-relaxed text-justify">
+        Radial Circle Marine Services Limited is a subsidiary of the Radial Circle
+        Group incorporated in 2007, specializing in the provision of navigation,
+        communication, and integration solutions onboard various vessels across
+        West Africa and the Gulf of Guinea.
+        <br />
+        <br />
+        Since its inception, the company has emphasized developing a sound
+        technological base. Significant resources have been invested in staff
+        training and in building technical partnerships with high-technology
+        companies worldwide, leading to agency, distributorship, and technical
+        support services.
+      </p>
+    </div>
   </div>
 </section>
 
 
-      {/* Services */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8 }}
-        className="py-16 px-6 md:px-16 lg:px-32"
-      >
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center text-green-900">
-            Our Services
-          </h2>
-          <p className="mt-8 text-gray-700 text-base md:text-lg leading-relaxed text-center">
-            The range of services and products includes and is not limited to:
-          </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-            {services.map((service, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ delay: idx * 0.05, duration: 0.5 }}
-                whileHover={{ scale: 1.03 }}
-                className="bg-green-100 text-green-900 rounded-lg p-4 shadow hover:bg-green-200 transition"
-              >
-                {service}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Marine Products */}
-<section className="py-16 px-6 md:px-16 lg:px-32 bg-green-50">
+     {/* Services */}
+<motion.section
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false }}
+  transition={{ duration: 0.8 }}
+  className="py-20 px-6 md:px-16 lg:px-32 bg-gray-50 font-sans"
+>
   <div className="max-w-6xl mx-auto">
-    <motion.h2
-      initial={{ opacity: 0, y: 40 }}
+    {/* Header */}
+    <div className="text-center mb-12">
+      <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-green-900">
+        Our Services
+      </h2>
+      <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-green-700"></div>
+
+      <p className="mt-6 text-gray-700 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+        The range of services and products we offer includes, but is not limited
+        to, solutions delivered in line with international marine and industry
+        standards.
+      </p>
+    </div>
+
+    {/* Services List Container */}
+    <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-8 md:p-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
+        {services.map((service, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: idx * 0.04, duration: 0.45 }}
+            className="flex items-start gap-4"
+          >
+            {/* Bullet Icon */}
+            <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-700">
+              ✓
+            </span>
+
+            {/* Service Text */}
+            <p className="text-gray-800 text-sm md:text-base font-medium leading-relaxed">
+              {service}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</motion.section>
+
+
+     {/* Marine Products */}
+<section className="py-20 px-6 md:px-16 lg:px-32 bg-gray-50 font-sans">
+  <div className="max-w-6xl mx-auto">
+    {/* Section Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false }}
-      transition={{ duration: 0.8 }}
-      className="text-2xl md:text-3xl font-semibold text-center text-green-900"
+      transition={{ duration: 0.7 }}
+      className="text-center mb-14"
     >
-      Marine Products
-    </motion.h2>
+      <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-green-900">
+        Marine Products
+      </h2>
+      <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-green-700"></div>
+    </motion.div>
 
     {marineProducts.map((brand, idx) => (
       <motion.div
         key={idx}
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="mt-12"
+        transition={{ duration: 0.7, delay: 0.15 }}
+        className="mb-20"
       >
-        <div className="flex items-center justify-center mb-6">
-          <img src={brand.logo} alt={brand.brand} className="h-16 object-contain" />
+        {/* Brand Header */}
+        <div className="flex items-center justify-center mb-10">
+          <img
+            src={brand.logo}
+            alt={brand.brand}
+            className="h-14 object-contain grayscale hover:grayscale-0 transition duration-300"
+          />
         </div>
 
-        {/* ✅ 2 per row on mobile/sm/md, 6 per row on lg */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-6">
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {brand.items.map((product, pIdx) => (
             <motion.div
               key={pIdx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              transition={{ delay: pIdx * 0.1, duration: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white shadow-lg rounded-2xl overflow-hidden border border-gray-100 flex flex-col h-full hover:shadow-green-200 transition lg:col-span-2"
+              transition={{ delay: pIdx * 0.06, duration: 0.5 }}
+              whileHover={{ y: -4 }}
+              className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col"
             >
-              <img src={product.img} alt={product.title} className="w-full h-32 object-cover" />
-              <div className="p-4 flex-1 flex flex-col text-center">
-                <h3 className="text-base font-medium text-green-700 hover:text-green-900 transition">
+              <img
+                src={product.img}
+                alt={product.title}
+                className="w-full h-40 object-cover"
+              />
+
+              <div className="p-6 text-center flex-1 flex flex-col">
+                <h3 className="text-sm md:text-base font-semibold text-green-700 hover:text-green-900 transition">
                   {product.title}
                 </h3>
-                <p className="mt-2 text-gray-600 text-sm">{product.desc}</p>
+                <p className="mt-3 text-gray-600 text-xs md:text-sm leading-relaxed">
+                  {product.desc}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -368,6 +415,7 @@ distributorship, and technical support services.
     ))}
   </div>
 </section>
+
 
 {/* Classifications */}
 <motion.section
