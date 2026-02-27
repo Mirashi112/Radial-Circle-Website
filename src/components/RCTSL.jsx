@@ -10,7 +10,7 @@ import rctslPartner5 from "../assets/rctsl-partner-5.png";
 import rctslPartner6 from "../assets/rctsl-partner-6.png";
 // import rctslPartner7 from "../assets/rctsl-partner-7.png";
 import rctslPartner8 from "../assets/rctsl-partner-8.png";
-import rctslPartner9 from "../assets/rctsl-partner-9.jpg";
+import rctslPartner9 from "../assets/rctsl-partner-9.png";
 import rctslPartner10 from "../assets/rctsl-partner-10.png";
 // import rctslPartner11 from "../assets/rctsl-partner-11.png";
 import rctslPartner12 from "../assets/rctsl-partner-12.png";
