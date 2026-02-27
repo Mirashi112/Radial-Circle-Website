@@ -61,18 +61,18 @@ import sailormfhf from "../assets/sailormf-hf.jpg";
 import sailorinmarsat from "../assets/sailorinmarsatc.jpg";
 import sailorais from "../assets/sailorais.jpg";
 
-// // import partner1 from "../assets/partner1.png.jpg";
-// import partner2 from "../assets/partner2.png.jpg";
-// import partner3 from "../assets/partner3.png.jpg";
-// import partner4 from "../assets/partner4.png.jpg";
-// import partner5 from "../assets/partner5.png.jpg";
-// import partner6 from "../assets/partner6.png.jpg";
-// import partner7 from "../assets/partner7.png.jpg";
-// import partner8 from "../assets/partner8.png";
-// import partner9 from "../assets/partner9.png";
-// import partner10 from "../assets/partner10.png";
-// import partner11 from "../assets/partner11.png";
-// import partner12 from "../assets/partner12.png";
+// import partner1 from "../assets/partner1.png.jpg";
+import partner2 from "../assets/partner2.png.jpg";
+import partner3 from "../assets/partner3.png.jpg";
+import partner4 from "../assets/partner4.png.jpg";
+import partner5 from "../assets/partner5.png.jpg";
+import partner6 from "../assets/partner6.png.jpg";
+import partner7 from "../assets/partner7.png.jpg";
+import partner8 from "../assets/partner8.png";
+import partner9 from "../assets/partner9.png";
+import partner10 from "../assets/partner10.png";
+import partner11 from "../assets/partner11.png";
+import partner12 from "../assets/partner12.png";
 
 // ----------------------
 // ADDED: animation variants + theme (fixes the "fadeInUp is not defined" error)
@@ -93,18 +93,18 @@ const theme = {
 
 // ✅ Array of imported logos
 const rcmsPartners = [
-  // partner1,
-  // partner2,
-  // partner3,
-  // partner4,
-  // partner5,
-  // partner6,
-  // partner7,
-  // partner8,
-  // partner9,
-  // partner10,
-  // partner11,
-  // partner12,
+  partner1,
+  partner2,
+  partner3,
+  partner4,
+  partner5,
+  partner6,
+  partner7,
+  partner8,
+  partner9,
+  partner10,
+  partner11,
+  partner12,
 ];
 
 const RCMS = () => {
