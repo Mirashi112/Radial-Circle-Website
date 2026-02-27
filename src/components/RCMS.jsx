@@ -61,7 +61,7 @@ import sailormfhf from "../assets/sailormf-hf.jpg";
 import sailorinmarsat from "../assets/sailorinmarsatc.jpg";
 import sailorais from "../assets/sailorais.jpg";
 
-import partner1 from "../assets/partner1.png.jpg";
+// import partner1 from "../assets/partner1.png.jpg";
 import partner2 from "../assets/partner2.png.jpg";
 import partner3 from "../assets/partner3.png.jpg";
 import partner4 from "../assets/partner4.png.jpg";
@@ -93,7 +93,7 @@ const theme = {
 
 // ✅ Array of imported logos
 const rcmsPartners = [
-  partner1,
+  // partner1,
   partner2,
   partner3,
   partner4,
