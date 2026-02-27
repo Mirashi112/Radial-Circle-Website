@@ -26,7 +26,7 @@ import nimasa from "../assets/nimasa.png"; // 👉 add classification logo in as
 import autopilot from "../assets/autopillot.jpg"; // 👉 add product images in assets
 import gyrocompass from "../assets/gyrocompass.jpg"; // 👉 add product images in assets
 import radar from "../assets/radar.jpg"; // 👉 add product images in assets
-import ecdis from "../assets/ecdis.jpg"; // 👉 add product images in assets
+// import ecdis from "../assets/ecdis.jpg"; 👉 add product images in assets
 import speedlog from "../assets/speedlog.jpg"; // 👉 add product images in assets
 import vdr from "../assets/vdr.jpg"; // 👉 add product images in assets
 
@@ -117,7 +117,7 @@ const RCMS = () => {
         { title: "Auto Pilot", desc: "Reliable and precise autopilot systems.", img: autopilot },
         { title: "Gyrocompass", desc: "Accurate navigation gyros for marine vessels.", img: gyrocompass },
         { title: "Radar", desc: "Advanced radar solutions for marine operations.", img: radar },
-        { title: "ECDIS", desc: "Electronic chart display and information system.", img: ecdis },
+        // { title: "ECDIS", desc: "Electronic chart display and information system.", img: ecdis },
         { title: "Speed Log", desc: "Precision speed logging systems.", img: speedlog },
         { title: "VDR", desc: "Voyage data recorders for compliance & safety.", img: vdr },
       ],
