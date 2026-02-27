@@ -7,7 +7,7 @@ import integratedImg from "../assets/ross-integrated.jpg";
 import serviceCalibrationImg from "../assets/service-calibration.png";
 import serviceFieldImg from "../assets/service-field.png";
 import serviceVesselImg from "../assets/service-vessel.jpg";
-import valvesImg from "../assets/valves.jpeg";
+import valvesImg from "../assets/valves.jpg";
 
 // ✅ Import your 6 partner logos here
 import rossPartner1 from "../assets/rosspartner-1.png";
